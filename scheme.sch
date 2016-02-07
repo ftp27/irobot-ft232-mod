@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -938,32 +938,12 @@ In this library the device names are the same as the pin names of the symbols, t
 <text x="-3.81" y="3.175" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="+5V/3" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
 </symbol>
-<symbol name="PE">
-<wire x1="-1.27" y1="-0.762" x2="1.27" y2="-0.762" width="0.254" layer="94"/>
-<wire x1="-0.635" y1="-1.524" x2="0.635" y2="-1.524" width="0.254" layer="94"/>
-<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
-<text x="-4.445" y="-4.699" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="PE" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="+5V/3" prefix="SUPPLY">
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
 <gate name="G$1" symbol="+05V/3" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="PE" prefix="SUPPLY">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
-<gates>
-<gate name="PE" symbol="PE" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -1681,6 +1661,79 @@ For boards designed to be plugged directly into a USB slot. If possible, ensure 
 </deviceset>
 </devicesets>
 </library>
+<library name="components">
+<packages>
+<package name="DC_POWER_JACK">
+<wire x1="6.5" y1="-10" x2="-6.5" y2="-10" width="0.127" layer="21"/>
+<wire x1="-6.5" y1="-10" x2="-6.5" y2="5.5" width="0.127" layer="21"/>
+<wire x1="-6.5" y1="5.5" x2="6.5" y2="5.5" width="0.127" layer="21"/>
+<wire x1="6.5" y1="5.5" x2="6.5" y2="-10" width="0.127" layer="21"/>
+<wire x1="5.5" y1="-9" x2="-5.5" y2="-9" width="0.127" layer="21"/>
+<wire x1="-5.5" y1="-9" x2="-5.5" y2="-1" width="0.127" layer="21"/>
+<wire x1="5.5" y1="-1" x2="5.5" y2="-1.5" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="3.5" width="0.127" layer="21"/>
+<wire x1="5.5" y1="-1.5" x2="5.5" y2="-9" width="0.127" layer="21"/>
+<wire x1="0" y1="4.5" x2="-5.5" y2="-1" width="0.127" layer="21" curve="90"/>
+<wire x1="0" y1="4.5" x2="5.5" y2="-1" width="0.127" layer="21" curve="-90"/>
+<circle x="0" y="0" radius="1" width="0.127" layer="21"/>
+<pad name="P2" x="1.5" y="-8.5" drill="1" diameter="2" shape="long" rot="R180"/>
+<pad name="P3" x="-2.5" y="-5" drill="1" diameter="2" shape="long" rot="R180"/>
+<pad name="P1" x="0" y="5" drill="1" diameter="2" shape="long" rot="R180"/>
+<text x="-6.5" y="6.5" size="1.27" layer="25">&gt;NAME</text>
+<text x="-6.5" y="8.5" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-5.5" y1="-1" x2="-5.5" y2="4.5" width="0.06" layer="21"/>
+<wire x1="-5.5" y1="4.5" x2="0" y2="4.5" width="0.06" layer="21"/>
+<wire x1="0" y1="4.5" x2="5.5" y2="4.5" width="0.06" layer="21"/>
+<wire x1="5.5" y1="4.5" x2="5.5" y2="-1.5" width="0.06" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="DC_POWER_JACK">
+<pin name="P1" x="5.1" y="2.1" visible="off" length="middle" direction="pwr" rot="R180"/>
+<pin name="P3" x="5.1" y="0" visible="off" length="middle" direction="pwr" rot="R180"/>
+<pin name="P2" x="5.1" y="-2.1" visible="off" length="middle" direction="pwr" rot="R180"/>
+<wire x1="0" y1="1.2" x2="0" y2="3" width="0.1" layer="94"/>
+<wire x1="0" y1="3" x2="-0.9" y2="3" width="0.1" layer="94"/>
+<wire x1="-0.9" y1="3" x2="-0.9" y2="2.8" width="0.1" layer="94"/>
+<wire x1="-0.9" y1="2.8" x2="-0.9" y2="1.3" width="0.1" layer="94"/>
+<wire x1="-0.9" y1="1.3" x2="-0.9" y2="1.2" width="0.1" layer="94"/>
+<wire x1="-0.9" y1="1.2" x2="0" y2="1.2" width="0.1" layer="94"/>
+<wire x1="0" y1="-2.1" x2="-1.6" y2="-2.1" width="0.127" layer="94"/>
+<wire x1="-1.6" y1="-2.1" x2="-3.4" y2="-2.1" width="0.127" layer="94"/>
+<wire x1="-3.4" y1="-2.1" x2="-4.4" y2="-1.1" width="0.127" layer="94"/>
+<wire x1="-4.4" y1="-1.1" x2="-5.4" y2="-2.1" width="0.127" layer="94"/>
+<wire x1="0" y1="0" x2="-1.6" y2="0" width="0.127" layer="94"/>
+<wire x1="-1.6" y1="0" x2="-1.6" y2="-2.1" width="0.127" layer="94"/>
+<wire x1="-1.6" y1="-2.1" x2="-2.1" y2="-1.6" width="0.127" layer="94"/>
+<wire x1="-1.6" y1="-2.1" x2="-1.1" y2="-1.6" width="0.127" layer="94"/>
+<wire x1="-0.9" y1="2.8" x2="-4.9" y2="2.8" width="0.127" layer="94"/>
+<wire x1="-4.9" y1="2.8" x2="-5.6" y2="2" width="0.127" layer="94" curve="90"/>
+<wire x1="-5.6" y1="2" x2="-4.9" y2="1.3" width="0.127" layer="94" curve="90"/>
+<wire x1="-4.9" y1="1.3" x2="-0.9" y2="1.3" width="0.127" layer="94"/>
+<text x="-5.08" y="7.62" size="1.778" layer="95">&gt;NAME</text>
+<text x="-5.08" y="5.08" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="DC_POWER_JACK">
+<gates>
+<gate name="G$1" symbol="DC_POWER_JACK" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="DC_POWER_JACK">
+<connects>
+<connect gate="G$1" pin="P1" pad="P1"/>
+<connect gate="G$1" pin="P2" pad="P2"/>
+<connect gate="G$1" pin="P3" pad="P3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1699,8 +1752,8 @@ For boards designed to be plugged directly into a USB slot. If possible, ensure 
 <part name="LSP1" library="solpad" deviceset="SE14" device=""/>
 <part name="LSP2" library="solpad" deviceset="SE14" device=""/>
 <part name="SUPPLY1" library="supply2" deviceset="+5V/3" device=""/>
-<part name="SUPPLY2" library="supply2" deviceset="PE" device=""/>
 <part name="J1" library="SparkFun-Connectors" deviceset="USB" device="PTH" value="USB-B"/>
+<part name="SUPPLY" library="components" deviceset="DC_POWER_JACK" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1716,15 +1769,29 @@ For boards designed to be plugged directly into a USB slot. If possible, ensure 
 <instance part="X3" gate="-2" x="116.84" y="55.88"/>
 <instance part="X4" gate="-1" x="96.52" y="48.26"/>
 <instance part="X4" gate="-2" x="116.84" y="48.26"/>
-<instance part="LSP1" gate="1" x="99.06" y="33.02" rot="R270"/>
-<instance part="LSP2" gate="1" x="99.06" y="25.4" rot="R270"/>
+<instance part="LSP1" gate="1" x="12.9" y="30" rot="R270"/>
+<instance part="LSP2" gate="1" x="12.9" y="25.8" rot="R270"/>
 <instance part="SUPPLY1" gate="G$1" x="22.86" y="78.74"/>
-<instance part="SUPPLY2" gate="PE" x="22.86" y="45.72"/>
-<instance part="J1" gate="G$1" x="7.62" y="63.5" rot="R180"/>
+<instance part="J1" gate="G$1" x="-2.54" y="58.42" rot="R180"/>
+<instance part="SUPPLY" gate="G$1" x="2.9" y="27.9"/>
 </instances>
 <busses>
 </busses>
 <nets>
+<net name="N$1" class="0">
+<segment>
+<pinref part="SUPPLY" gate="G$1" pin="P1"/>
+<wire x1="8" y1="30" x2="10.36" y2="30" width="0.1524" layer="91"/>
+<pinref part="LSP1" gate="1" pin="MP"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="SUPPLY" gate="G$1" pin="P2"/>
+<wire x1="8" y1="25.8" x2="10.36" y2="25.8" width="0.1524" layer="91"/>
+<pinref part="LSP2" gate="1" pin="MP"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
